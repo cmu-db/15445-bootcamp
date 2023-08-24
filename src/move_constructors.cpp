@@ -57,6 +57,7 @@ class Person {
     : age_(person.age_)
     , nicknames_(std::move(person.nicknames_))
     , valid_(true) {
+      // The moved object's validity tag is set to false.
       person.valid_ = false;
     }
 
@@ -65,6 +66,8 @@ class Person {
       age_ = other.age_;
       nicknames_ = std::move(nicknames_);
       valid_ = true;
+
+      // The moved object's validity tag is set to false.
       other.valid_ = false;
       return *this;
     }
