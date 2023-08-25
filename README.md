@@ -32,8 +32,6 @@
 - namespaces.cpp
 
 ## Things to Do
-- write CMake
-- with make, make clean, make format
 - changing all the docs to third person
-- also making everything 80 characters
+- also making everything 120 characters width
 - test executables and proofread everything one more time

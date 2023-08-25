@@ -14,17 +14,15 @@
 #include <iostream>
 
 // A function that takes an int reference and adds 3 to it.
-void add_three(int& a) {
-  a = a + 3;
-}
+void add_three(int &a) { a = a + 3; }
 
 int main() {
   // Take this expression. Note that b has type int& (int reference),
-  // since it is a reference to a. This means that a and b both refer to the same
-  // data. You can declare references by setting your variables type via
-  // the single ampersand syntax. 
+  // since it is a reference to a. This means that a and b both refer to the
+  // same data. You can declare references by setting your variables type via
+  // the single ampersand syntax.
   int a = 10;
-  int& b = a;
+  int &b = a;
 
   // As stated, if we try to print b, we will get 10.
   std::cout << "b is " << b << std::endl;

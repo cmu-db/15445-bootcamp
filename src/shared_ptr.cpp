@@ -19,37 +19,37 @@
 
 // Basic point class. (Will use later)
 class Point {
-  public:
-    Point() : x_(0), y_(0) {}
-    Point(int x, int y) : x_(x), y_(y) {}
-    inline int GetX() {return x_; }
-    inline int GetY() {return y_; }
-    inline void SetX(int x) { x_ = x; }
-    inline void SetY(int y) { y_ = y; }
+public:
+  Point() : x_(0), y_(0) {}
+  Point(int x, int y) : x_(x), y_(y) {}
+  inline int GetX() { return x_; }
+  inline int GetY() { return y_; }
+  inline void SetX(int x) { x_ = x; }
+  inline void SetY(int y) { y_ = y; }
 
-  private:
-    int x_;
-    int y_;
+private:
+  int x_;
+  int y_;
 };
 
 // Function that modifies a Point object inside a shared pointer
 // by passing the shared pointer argument as an reference.
-void modify_ptr_via_ref(std::shared_ptr<Point>& point) {
-  point->SetX(15);
-}
+void modify_ptr_via_ref(std::shared_ptr<Point> &point) { point->SetX(15); }
 
 // Function that modifies a Point object inside a shared pointer
 // by passing the shared pointer argument as an rvalue reference.
-void modify_ptr_via_rvalue_ref(std::shared_ptr<Point>&& point) {
+void modify_ptr_via_rvalue_ref(std::shared_ptr<Point> &&point) {
   point->SetY(645);
 }
 
 void copy_shared_ptr_in_function(std::shared_ptr<Point> point) {
-  std::cout << "Use count of shared pointer is " << point.use_count() << std::endl;
+  std::cout << "Use count of shared pointer is " << point.use_count()
+            << std::endl;
 }
 
 int main() {
-  // This is how to initialize an empty shared pointer of type std::shared_ptr<Point>.
+  // This is how to initialize an empty shared pointer of type
+  // std::shared_ptr<Point>.
   std::shared_ptr<Point> s1;
   // This is how to initialize a shared pointer with the default constructor.
   std::shared_ptr<Point> s2 = std::make_shared<Point>();
@@ -72,21 +72,27 @@ int main() {
 
   // First, the number of references to pointer s3 is obtained. This should be
   // 1 because s3 is the only object instance using the data in s3.
-  std::cout << "Number of shared pointer object instances using the data in s3: " << s3.use_count() << std::endl;
+  std::cout
+      << "Number of shared pointer object instances using the data in s3: "
+      << s3.use_count() << std::endl;
 
   // Then, s4 is copy-assigned from s3.
   std::shared_ptr<Point> s4 = s3;
 
   // Now, the number of references to pointer s3's data should be 2, since both
   // s4 and s3 have access to s3's data.
-  std::cout << "Number of shared pointer object instances using the data in s3 after one copy: " << s3.use_count() << std::endl;
+  std::cout << "Number of shared pointer object instances using the data in s3 "
+               "after one copy: "
+            << s3.use_count() << std::endl;
 
   // Then, s5 is copy-constructed from s4.
   std::shared_ptr<Point> s5(s4);
 
   // Now, the number of references to pointer s3's data should be 3, since s5,
   // s4, and s3 have access to s3's data.
-  std::cout << "Number of shared pointer object instances using the data in s3 after two copies: " << s3.use_count() << std::endl;
+  std::cout << "Number of shared pointer object instances using the data in s3 "
+               "after two copies: "
+            << s3.use_count() << std::endl;
 
   // Modifying s3's data should also change the data in s4 and s5, since they
   // refer to the same object instance.
@@ -96,38 +102,47 @@ int main() {
   std::cout << "Printing x in s4: " << s4->GetX() << std::endl;
   std::cout << "Printing x in s5: " << s5->GetX() << std::endl;
 
-  // It is also possible to transfer ownership of a std::shared_ptr by moving it.
-  // Note that the pointer is empty after the move has occurred.
+  // It is also possible to transfer ownership of a std::shared_ptr by moving
+  // it. Note that the pointer is empty after the move has occurred.
   std::shared_ptr<Point> s6 = std::move(s5);
 
-  // Note that s5 is now empty, s6 refers to the same data as s3 and s4, and there
-  // are still 3 shared pointer instances with access to the same Point instance data,
-  // not 4.
+  // Note that s5 is now empty, s6 refers to the same data as s3 and s4, and
+  // there are still 3 shared pointer instances with access to the same Point
+  // instance data, not 4.
   std::cout << "Pointer s5 is " << (s5 ? "not empty" : "empty") << std::endl;
-  std::cout << "Number of shared pointer object instances using the data in s3 after two copies and a move: " << s3.use_count() << std::endl;
+  std::cout << "Number of shared pointer object instances using the data in s3 "
+               "after two copies and a move: "
+            << s3.use_count() << std::endl;
 
-  // Similar to unique pointers, shared pointers can also be passed by reference and rvalue
-  // reference. See unique_ptr.cpp (line 89) for a information on passing unique pointers by
-  // reference. See references.cpp for more information on references. See move_semantics.cpp
-  // for more information on rvalue references. Here, we present code below that
-  // calls functions that modify s2 by passing a shared pointer as a reference
-  // and as an rvalue reference.
+  // Similar to unique pointers, shared pointers can also be passed by reference
+  // and rvalue reference. See unique_ptr.cpp (line 89) for a information on
+  // passing unique pointers by reference. See references.cpp for more
+  // information on references. See move_semantics.cpp for more information on
+  // rvalue references. Here, we present code below that calls functions that
+  // modify s2 by passing a shared pointer as a reference and as an rvalue
+  // reference.
   modify_ptr_via_ref(s2);
   modify_ptr_via_rvalue_ref(std::move(s2));
 
   // After running this code, s2 should have x = 15 and y = 445.
-  std::cout << "Pointer s2 has x=" << s2->GetX() << " and y=" << s2->GetY() << std::endl;
+  std::cout << "Pointer s2 has x=" << s2->GetX() << " and y=" << s2->GetY()
+            << std::endl;
 
-  // Unlike unique pointers, shared pointers can also be passed by value. In this case,
-  // the function contains its own copy of a shared pointer, which destroys itself after
-  // the function is finished. In this example, before s2 is passed to the function by
-  // value, its use count is 1. While it is in the function, its use count is 2, because
-  // there is another copy of s2's data in the shared pointer instance in the function.
-  // After the function goes out of scope, this object in the function is destroyed, and
-  // the use count returns to 1.
-  std::cout << "Number of shared pointer object instances using the data in s2: " << s2.use_count() << std::endl;
+  // Unlike unique pointers, shared pointers can also be passed by value. In
+  // this case, the function contains its own copy of a shared pointer, which
+  // destroys itself after the function is finished. In this example, before s2
+  // is passed to the function by value, its use count is 1. While it is in the
+  // function, its use count is 2, because there is another copy of s2's data in
+  // the shared pointer instance in the function. After the function goes out of
+  // scope, this object in the function is destroyed, and the use count returns
+  // to 1.
+  std::cout
+      << "Number of shared pointer object instances using the data in s2: "
+      << s2.use_count() << std::endl;
   copy_shared_ptr_in_function(s2);
-  std::cout << "Number of shared pointer object instances using the data in s2 after calling copy_shared_ptr_in_function: " << s2.use_count() << std::endl;
+  std::cout << "Number of shared pointer object instances using the data in s2 "
+               "after calling copy_shared_ptr_in_function: "
+            << s2.use_count() << std::endl;
 
   return 0;
 }

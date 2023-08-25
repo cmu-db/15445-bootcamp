@@ -13,37 +13,36 @@
 // Including unordered map library.
 #include <unordered_map>
 
-// The C++ auto keyword is a keyword that tells the compiler to infer the
-// type of a declared variable via its initialization expression.
-// It can be incredibly useful, as it allows for developer efficiency 
-// (where the developer no longer has to type out long, unruly type
-// names). It is also useful in the context of for-each loops.
-// However, using auto poses a risk where the developer may not be aware
-// of the types they are using, and therefore at risk for buggy and 
-// non functional code. So be careful!
+// The C++ auto keyword is a keyword that tells the compiler to infer the type
+// of a declared variable via its initialization expression. It can be
+// incredibly useful, as it allows for developer efficiency (where the developer
+// no longer has to type out long, unruly type names). It is also useful in the
+// context of for-each loops. However, using auto poses a risk where the
+// developer may not be aware of the types they are using, and therefore at risk
+// for buggy and non functional code. So be careful!
 
 // Basic templated class with very long name, to show the usefulness of auto.
-template<typename T, typename U>
-class Abcdefghijklmnopqrstuvwxyz {
-  public: 
-    Abcdefghijklmnopqrstuvwxyz(T instance1, U instance2) 
-    : instance1_(instance1)
-    , instance2_(instance2) {}
+template <typename T, typename U> class Abcdefghijklmnopqrstuvwxyz {
+public:
+  Abcdefghijklmnopqrstuvwxyz(T instance1, U instance2)
+      : instance1_(instance1), instance2_(instance2) {}
 
-    void print() const {
-      std::cout << "(" << instance1_ << "," << instance2_ << ")\n";
-    }
-  private:
-    T instance1_;
-    U instance2_;
+  void print() const {
+    std::cout << "(" << instance1_ << "," << instance2_ << ")\n";
+  }
+
+private:
+  T instance1_;
+  U instance2_;
 };
 
 // Explicit template instantiation of the class
 // Abcdefghijklmnopqrstuvwxyz<int, float>.
 template class Abcdefghijklmnopqrstuvwxyz<int, float>;
 
-// Templated function that returns an object of this class with a very long name.
-template<typename T>
+// Templated function that returns an object of this class with a very long
+// name.
+template <typename T>
 Abcdefghijklmnopqrstuvwxyz<T, T> construct_obj(T instance) {
   return Abcdefghijklmnopqrstuvwxyz<T, T>(instance, instance);
 }
@@ -53,7 +52,7 @@ int main() {
   // is inferred to be type int.
   auto a = 1;
 
-  // Here are more examples of using auto to declare basic variables. 
+  // Here are more examples of using auto to declare basic variables.
   // Depending on the IDE being used, it might say what types a, b, and c
   // are.
   auto b = 3.2;
@@ -68,12 +67,12 @@ int main() {
   auto obj1 = construct_obj<int>(2);
 
   // Maybe for one line it does not seem all that convenient, but imagine
-  // if using this class with a very long name was useful in the code for
-  // an extended period of time. Then, I'd imagine it would save a long
-  // time!
+  // if using a class with a very long name was useful in the code for
+  // an extended period of time. Then, I'd imagine it would save a lot of
+  // typing time!
 
   // The auto keyword is also useful for iterating through C++ containers.
-  // For instance, let's construct a vector of type 
+  // For instance, let's construct a vector of type
   // Abcdefghijklmnopqrstuvwxyz<int, float>, and discuss methods of iterating
   // through it.
   std::vector<Abcdefghijklmnopqrstuvwxyz<int, float>> vec;
@@ -84,13 +83,13 @@ int main() {
   // iterate through the vector. Compare the readability of the two loops
   // below.
   std::cout << "Printing elements in vec...\n";
-  for (const Abcdefghijklmnopqrstuvwxyz<int, float>& elem : vec) {
+  for (const Abcdefghijklmnopqrstuvwxyz<int, float> &elem : vec) {
     elem.print();
   }
   std::cout << std::endl;
 
   std::cout << "Printing elements in vec with auto...\n";
-  for (const auto& elem : vec) {
+  for (const auto &elem : vec) {
     elem.print();
   }
   std::cout << std::endl;
@@ -101,22 +100,25 @@ int main() {
   // to it.
   std::unordered_map<std::string, int> map;
   map.insert({{"andy", 445}, {"jignesh", 645}});
-  
+
   // One method mentioned in unordered_map.cpp was to iterate through
   // a map by using a for loop with an iterator. Once again, compare
   // the readability of the two loops below.
   std::cout << "Printing elements in map...\n";
-  for (std::unordered_map<std::string, int>::iterator it =  map.begin(); it != map.end(); ++it) {
-    std::cout << "(" << it->first << "," << it->second << ")" << " ";
+  for (std::unordered_map<std::string, int>::iterator it = map.begin();
+       it != map.end(); ++it) {
+    std::cout << "(" << it->first << "," << it->second << ")"
+              << " ";
   }
   std::cout << std::endl;
 
   std::cout << "Printing elements in map with auto...\n";
-  for (auto it =  map.begin(); it != map.end(); ++it) {
-    std::cout << "(" << it->first << "," << it->second << ")" << " ";
+  for (auto it = map.begin(); it != map.end(); ++it) {
+    std::cout << "(" << it->first << "," << it->second << ")"
+              << " ";
   }
   std::cout << std::endl;
-  
+
   // Overall, auto is a useful C++ keyword that can be used to write code more
   // efficiently, and to write cleaner and more readable code.
   // Keep in mind that using auto to iterate through C++ containers is better
