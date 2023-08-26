@@ -8,6 +8,7 @@
 // and optimized transfer of ownership of data, between objects. One of the
 // main goals of move semantics is to increase performance, since moving an
 // object is faster and more efficient than deep copying the object.
+
 // To understand move semantics, one must understand the concept of lvalues
 // and rvalues. A simplified definition of lvalues is that lvalues are objects
 // that refer to an location in memory. Rvalues are anything that is not a
