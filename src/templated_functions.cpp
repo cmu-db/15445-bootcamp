@@ -20,6 +20,13 @@
 // https://mariusbancila.ro/blog/2021/03/15/typename-or-class/
 template <typename T> T add(T a, T b) { return a + b; }
 
+// It is possible to pass multiple type names via templates into functions.
+// This function will print both of these values out.
+template<typename T, typename U>
+void print_two_values(T a, U b) {
+  std::cout << a << " and " << b << std::endl;
+}
+
 // It is also possible to create specialized templated functions, that do
 // different things for different types. Take the following contrived example,
 // which prints the type if its a float type, but just prints hello world for
@@ -53,6 +60,11 @@ int main() {
   // don't do this because then you might not be sure of the types being passed
   // into your functions.
   std::cout << "Printing add(3, 5): " << add(3, 5) << std::endl;
+
+  // Second, let's see the print_two_values function being called with two
+  // different types.
+  std::cout << "Printing print_two_values<int, float>(3, 3.2): ";
+  print_two_values<int, float>(3, 3.2);
 
   // Let's see what happens when we called print_msg with and without the float
   // type being passed in. As expected, the first call to print_msg prints out

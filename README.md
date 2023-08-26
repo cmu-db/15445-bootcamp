@@ -11,7 +11,7 @@
 
 ### Templates
 - templated_functions.cpp (draft is done)
-- templated_classes.cpp
+- templated_classes.cpp (draft is done)
 
 ### C++ STL Containers
 - vectors.cpp (draft is done)
@@ -27,11 +27,6 @@
 
 ### Misc
 - wrapper_class.cpp
-- iterator.cpp
+- iterator.cpp (in progress)
 - auto.cpp (draft is done)
 - namespaces.cpp
-
-## Things to Do
-- changing all the docs to third person
-- also making everything 120 characters width
-- test executables and proofread everything one more time

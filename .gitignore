@@ -33,3 +33,9 @@
 
 # CMake
 build/
+
+# Todo
+todo.txt
+
+# VSCode
+.vscode/

@@ -9,9 +9,10 @@
 // data structures like stacks, queues, and hash tables easily. Each container
 // has its own header and usage. In the C++ standard (up to C++ 23), there are
 // currently 20 containers, which is far too many to cover here well. In this
-// file, we will introduce the container std::vector. We won't be able to cover
-// every function in this container, but we will try to cover the bare bones of
-// using this container.
+// file, we will introduce the container std::vector. The std::vector container
+// is essentially a generic dynamic array (or unbounded array). We won't be
+// able to cover every function in this container, but we will try to cover the
+// basics of using this container.
 
 // There is documentation on all the other functions, and other containers on
 // https://en.cppreference.com/w/cpp/container. You will definitely need this
@@ -34,11 +35,6 @@ public:
 
   Point(int x, int y) : x_(x), y_(y) {
     std::cout << "Custom constructor for the Point class is called.\n";
-  }
-
-  // Move constructor for the point class.
-  Point(Point &&point) : x_(point.x_), y_(point.y_) {
-    std::cout << "Move constructor for the Point class is called.\n";
   }
 
   inline int GetX() const { return x_; }
@@ -65,8 +61,7 @@ void print_int_vector(const std::vector<int> &vec) {
 }
 
 int main() {
-  // The std::vector container is essentially a generic dynamic array. We can
-  // declare a Point vector with the following syntax.
+  // We can declare a Point vector with the following syntax.
   std::vector<Point> point_vector;
 
   // It is also possible to initialize the vector via an initializer list.
@@ -112,10 +107,17 @@ int main() {
   // Now, we show how to erase elements from a vector. First, we can erase
   // elements by their position via the erase function. For instance, if we want
   // to delete int_vector[2], we can call the following function with the
-  // following arguments. Note that int_vector.begin() returns an iterator to
-  // the beginning of the vector, and so the erase function takes in a vector
-  // iterator noting the element to delete. Once again, iterators in C++ are
-  // objects that point to elements within containers.
+  // following arguments. The argument passed into this erase function has
+  // the type std::vector<int>::iterator. An iterator for a C++ STL container
+  // is an object that points to an element within the container. For instance,
+  // int_vector.begin() is an iterator object that points to the first element
+  // in the vector. The vector iterator also has a plus operator that takes
+  // a vector iterator and an integer. The plus operator will increase the 
+  // index of the element that the iterator is pointing to by the number passed
+  // in. Therefore, int_vector.begin() + 2 is poniting to the second element in
+  // the vector, or the element at int_vector[2].
+  // If you are confused about iterators, it may be helpful to read the header of
+  // iterator.cpp.
   int_vector.erase(int_vector.begin() + 2);
   std::cout << "Printing the elements of int_vector after erasing "
                "int_vector[2] (which is 2)";
@@ -124,7 +126,8 @@ int main() {
   // We can also erase elements in a range via the erase function. If we want to
   // delete elements starting from index 1 to the end of the array, then we can
   // do so the following. Note that int_vector.end() is an iterator pointing to
-  // the end of the vector.
+  // the end of the vector. It does not point to the last valid index of the
+  // vector. It points to the end of a vector and cannot be accessed for data.
   int_vector.erase(int_vector.begin() + 1, int_vector.end());
   std::cout << "Printing the elements of int_vector after erasing all elements "
                "from index 1 through the end\n";
@@ -137,8 +140,11 @@ int main() {
   // awfully complicated, but the code can be summarized as follows.
   // std::remove_if takes in 3 arguments. Two of those arguments indicate the
   // range of elements that we should filter. These are given by
-  // point_vector.begin() and point_vector.end(). The third argument is a
-  // conditional lambda type (see the function library in C++, or at
+  // point_vector.begin() and point_vector.end(), which are iterators that point
+  // to the beginning and the end of a vector respectively. Therefore, when we
+  // pass these in, we are implying that we want the whole vector filtered.
+  // The third argument is a conditional lambda type (see the std::function
+  // library in C++, or at 
   // https://en.cppreference.com/w/cpp/utility/functional/function), that takes
   // in one argument, which is supposed to represent each element in the vector
   // that we are filtering. This function should return a boolean that is true

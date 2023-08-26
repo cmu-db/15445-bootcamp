@@ -6,8 +6,13 @@
 
 // In this file, we will introduce the container std::set. We won't be able
 // to cover every function in this container, but we will try to cover the
-// bare bones of using this container. Look to the intro of vectors.cpp for
+// basics of using this container. Look to the intro of vectors.cpp for
 // a general overview of C++ STL containers.
+
+// The std::set container is a data structure that contains a sorted set of
+// unique objects of a single type. It is usually implemented as a Red-Black
+// tree, if that helps you conceptualize the std::set. The std::set container
+// is used to maintain of a set of unique elements.
 
 // There is documentation on all the other functions, and other containers
 // on https://en.cppreference.com/w/cpp/container. You will definitely need this
@@ -16,17 +21,10 @@
 
 // Includes std::cout (printing) for demo purposes.
 #include <iostream>
-// Includes std::next.
-#include <iterator>
 // Includes the set container library header.
 #include <set>
 
 int main() {
-  // The std::set container is a data structure that contains a sorted set of
-  // unique objects of a single type. It is usually implemented as a Red-Black
-  // tree, if that helps you conceptualize the std::set. The std::set container
-  // is used to maintain of a set of unique elements.
-
   // We can declare a int set with the following syntax.
   std::set<int> int_set;
 
@@ -38,11 +36,11 @@ int main() {
     int_set.insert(i);
   }
 
-  // To find an element, we can use the find function, which returns an iterator
-  // to the element within the set with the key that is equivalent to the key
-  // argument. We can then check to see whether this returned iterator is
-  // equivalent to the end iterator, which would imply that the element does not
-  // exist.
+  // To find an element, we can use the find function, which returns an
+  // iterator that points to the element within the set with the key that is
+  // equivalent to the key argument. We can then check to see whether this
+  // returned iterator is equivalent to the end iterator, which would imply
+  // that the element does not exist.
   std::set<int>::iterator search = int_set.find(2);
   if (search != int_set.end()) {
     std::cout << "Element 2 is in int_set.\n";
@@ -69,14 +67,14 @@ int main() {
   }
 
   // Additionally, if we want to erase an element at a certain position, we can
-  // pass in an iterator to the erase function. The following code will erase
-  // 2. Note that std::next is an iterator function that returns the successor
-  // of the iterator passed in as its argument.
-  int_set.erase(int_set.find(2));
+  // pass in an iterator to the erase function. Let's say we want to erase the
+  // first element from the set. We can pass in an iterator that points to the
+  // first element from the set to the erase function.
+  int_set.erase(int_set.begin());
 
-  // We confirm that 2 isn't in the set anymore.
-  if (int_set.count(2) == 0) {
-    std::cout << "Element 2 is not in the set.\n";
+  // We confirm that 1 isn't in the set anymore.
+  if (int_set.count(1) == 0) {
+    std::cout << "Element 1 is not in the set.\n";
   }
 
   // Lastly, we can erase elements in the set by passing in an iterator range to

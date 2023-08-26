@@ -6,11 +6,13 @@
 
 // Includes std::cout (printing) for demo purposes.
 #include <iostream>
+// Includes set library.
+#include <set>
 // Includes string library.
 #include <string>
-// Including vector library.
+// Includes vector library.
 #include <vector>
-// Including unordered map library.
+// Includes unordered map library.
 #include <unordered_map>
 
 // The C++ auto keyword is a keyword that tells the compiler to infer the type
@@ -35,10 +37,6 @@ private:
   T instance1_;
   U instance2_;
 };
-
-// Explicit template instantiation of the class
-// Abcdefghijklmnopqrstuvwxyz<int, float>.
-template class Abcdefghijklmnopqrstuvwxyz<int, float>;
 
 // Templated function that returns an object of this class with a very long
 // name.
@@ -72,38 +70,14 @@ int main() {
   // typing time!
 
   // The auto keyword is also useful for iterating through C++ containers.
-  // For instance, let's construct a vector of type
-  // Abcdefghijklmnopqrstuvwxyz<int, float>, and discuss methods of iterating
-  // through it.
-  std::vector<Abcdefghijklmnopqrstuvwxyz<int, float>> vec;
-  vec.emplace_back(2, 3.2);
-  vec.emplace_back(4, 5.6);
-
-  // One of the methods taught in vectors.cpp was to use a for-each loop to
-  // iterate through the vector. Compare the readability of the two loops
-  // below.
-  std::cout << "Printing elements in vec...\n";
-  for (const Abcdefghijklmnopqrstuvwxyz<int, float> &elem : vec) {
-    elem.print();
-  }
-  std::cout << std::endl;
-
-  std::cout << "Printing elements in vec with auto...\n";
-  for (const auto &elem : vec) {
-    elem.print();
-  }
-  std::cout << std::endl;
-
-  // It is also possible to employ this technique to iterate through an
-  // unordered map (and many other containers). Let's discuss how to do
-  // this! First, we create an unordered map instance and add elements
-  // to it.
+  // For instance, let's construct an unordered map with std::string keys
+  // and int values, and discuss methods of iterating through it.
   std::unordered_map<std::string, int> map;
   map.insert({{"andy", 445}, {"jignesh", 645}});
 
   // One method mentioned in unordered_map.cpp was to iterate through
-  // a map by using a for loop with an iterator. Once again, compare
-  // the readability of the two loops below.
+  // a map by using a for loop with an iterator. Compare the readability
+  // of the two loops below.
   std::cout << "Printing elements in map...\n";
   for (std::unordered_map<std::string, int>::iterator it = map.begin();
        it != map.end(); ++it) {
@@ -116,6 +90,26 @@ int main() {
   for (auto it = map.begin(); it != map.end(); ++it) {
     std::cout << "(" << it->first << "," << it->second << ")"
               << " ";
+  }
+  std::cout << std::endl;
+
+  // It is also possible to use the auto keyword to iterate over vectors
+  // and sets.
+  std::vector<int> vec = {1, 2, 3, 4};
+  std::cout << "Printing elements in vector with auto...\n";
+  for (const auto& elem : vec) {
+    std::cout << elem << " ";
+  }
+  std::cout << std::endl;
+
+  std::set<int> set;
+  for (int i = 1; i <= 10; ++i) {
+    set.insert(i);
+  }
+
+  std::cout << "Printing elements in set with auto...\n";
+  for (const auto &elem : set) {
+    std::cout << elem << " ";
   }
   std::cout << std::endl;
 
