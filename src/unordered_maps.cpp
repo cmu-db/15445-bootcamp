@@ -1,7 +1,7 @@
 /**
  * @file unordered_maps.cpp
  * @author Abigale Kim (abigalek)
- * @brief Tutorial code for C++ STL unordered_map.
+ * @brief Tutorial code for C++ Standard Library (STL) unordered_map.
  */
 
 // In this file, we will introduce the container std::unordered_map. We won't

@@ -42,16 +42,16 @@ reading the files on concepts you are unfamiliar about.
 - `templated_functions.cpp`: Covers C++ templated functions.
 - `templated_classes.cpp` Covers C++ templated classes.
 
-### C++ STL Containers
+### C++ Standard Library (STL) Containers
 - `vectors.cpp`: Covers `std::vector`.
 - `set.cpp`: Covers `std::set`.
 - `unordered_map.cpp`: Covers `std::unordered_map`.
 
-### C++ STL Memory
+### C++ Standard Library (STL) Memory
 - `unique_ptr.cpp`: Covers `std::unique_ptr`.
 - `shared_ptr.cpp`: Covers `std::shared_ptr`.
 
-### C++ STL Synch Primitives
+### C++ Standard Library (STL) Synch Primitives
 - `synch_primitives.cpp`: Covers `std::mutex`, `std::scoped_lock`, and `std::condition_variable`.
 
 ### Misc

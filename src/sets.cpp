@@ -1,7 +1,7 @@
 /**
  * @file sets.cpp
  * @author Abigale Kim (abigalek)
- * @brief Tutorial code for C++ STL sets.
+ * @brief Tutorial code for C++ Standard Library (STL) sets.
  */
 
 // In this file, we will introduce the container std::set. We won't be able
@@ -39,8 +39,9 @@ int main() {
   // To find an element, we can use the find function, which returns an
   // iterator that points to the element within the set with the key that is
   // equivalent to the key argument. We can then check to see whether this
-  // returned iterator is equivalent to the end iterator, which would imply
-  // that the element does not exist.
+  // returned iterator is equivalent to the end iterator. If the returned
+  // iterator value is equivalent to the end iterator value, then this would
+  // imply that the element does not exist.
   std::set<int>::iterator search = int_set.find(2);
   if (search != int_set.end()) {
     std::cout << "Element 2 is in int_set.\n";

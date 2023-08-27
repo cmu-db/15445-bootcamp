@@ -1,7 +1,7 @@
 /**
  * @file vectors.cpp
  * @author Abigale Kim (abigalek)
- * @brief Tutorial code for C++ STL vectors.
+ * @brief Tutorial code for C++ Standard Library (STL) vectors.
  */
 
 // The C++ STL contains a container library, which is a generic collection of
