@@ -69,6 +69,20 @@ int main() {
   // an extended period of time. Then, I'd imagine it would save a lot of
   // typing time!
 
+  // One important thing to note about the auto keyword is that it 
+  // defaults to copying objects, which can lower performance. Take the
+  // following example where we construct a int vector, and want to
+  // define a variable that is a reference to it.
+  std::vector<int> int_values = {1, 2, 3, 4};
+
+  // The following code deep-copies int_values into copy_int_values,
+  // since auto infers the type as std::vector<int>, not std::vector<int>&.
+  auto copy_int_values = int_values;
+
+  // However, the following code defines ref_int_values, which is a reference
+  // to int_values, and therefore does not deep copy the int_values vector.
+  auto& ref_int_values = int_values;
+
   // The auto keyword is also useful for iterating through C++ containers.
   // For instance, let's construct an unordered map with std::string keys
   // and int values, and discuss methods of iterating through it.
