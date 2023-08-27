@@ -52,7 +52,9 @@ reading the files on concepts you are unfamiliar about.
 - `shared_ptr.cpp`: Covers `std::shared_ptr`.
 
 ### C++ Standard Library (STL) Synch Primitives
-- `synch_primitives.cpp`: Covers `std::mutex`, `std::scoped_lock`, and `std::condition_variable`.
+- `mutex.cpp`: Covers `std::mutex`.
+- `scoped_lock.cpp`: Covers `std::scoped_lock`.
+- `condition_variable.cpp`: Covers `std::condition_variable`.
 
 ### Misc
 - `wrapper_class.cpp`: Covers C++ wrapper classes.
