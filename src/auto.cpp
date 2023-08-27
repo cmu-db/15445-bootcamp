@@ -6,13 +6,13 @@
 
 // Includes std::cout (printing) for demo purposes.
 #include <iostream>
-// Includes set library.
+// Includes the std::set library.
 #include <set>
-// Includes string library.
+// Includes the C++ string library.
 #include <string>
-// Includes vector library.
+// Includes the std::vector library.
 #include <vector>
-// Includes unordered map library.
+// Includes the std::unordered map library.
 #include <unordered_map>
 
 // The C++ auto keyword is a keyword that tells the compiler to infer the type

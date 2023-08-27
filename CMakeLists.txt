@@ -36,6 +36,7 @@ add_executable(shared_ptr src/shared_ptr.cpp)
 add_executable(mutex src/mutex.cpp)
 add_executable(scoped_lock src/scoped_lock.cpp)
 add_executable(condition_variable src/condition_variable.cpp)
+add_executable(rwlock src/rwlock.cpp)
 
 # Compiling misc executables
 add_executable(wrapper_class src/wrapper_class.cpp)

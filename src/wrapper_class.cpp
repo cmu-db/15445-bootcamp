@@ -23,7 +23,7 @@
 
 // Includes std::cout (printing) for demo purposes.
 #include <iostream>
-// Including the utility header for std::move
+// Includes the utility header for std::move.
 #include <utility>
 
 // The IntPtrManager class is a wrapper class that manages an int*. The

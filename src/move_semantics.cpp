@@ -25,9 +25,9 @@
 
 // Includes std::cout (printing) for demo purposes.
 #include <iostream>
-// Including the utility header for std::move
+// Includes the utility header for std::move.
 #include <utility>
-// Including the header for std::vector. We'll cover vectors more in
+// Includes the header for std::vector. We'll cover vectors more in
 // containers.cpp, but what suffices to know for now is that vectors are
 // essentially dynamic arrays, and the type std::vector<int> is an array of
 // ints. Mainly, vectors take up a non-negligible amount of memory, and are here

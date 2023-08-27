@@ -30,10 +30,11 @@ void add_count() {
   m.unlock();
 }
 
-// The main method constructs two thread objects (C++ STL equivalent of pthreads)
-// and has them both run the add_count function in parallel. After these threads
-// are finished executing, we print the count value, showing that both increments
-// worked successfully.
+// The main method constructs two thread objects and has them both run the
+// add_count function in parallel. After these threads are finished executing,
+// we print the count value, showing that both increments worked successfully.
+// The std::thread library is the C++ STL library used to construct threads.
+// You may view it as a C++ equivalent of the pthread library in C.
 int main() {
   std::thread t1(add_count);
   std::thread t2(add_count);

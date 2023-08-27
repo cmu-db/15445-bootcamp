@@ -61,6 +61,7 @@ reading the files on concepts you are unfamiliar about.
 - `mutex.cpp`: Covers `std::mutex`.
 - `scoped_lock.cpp`: Covers `std::scoped_lock`.
 - `condition_variable.cpp`: Covers `std::condition_variable`.
+- `rwlock.cpp`: Covers the usage of several C++ STL synchronization primitive libraries (`std::shared_mutex`, `std::shared_lock`, `std::unique_lock`) to create a reader-writer's lock implementation. 
 
 ## Other Resources
 There are many other resources that will be helpful while you get accquainted to C++.
@@ -69,3 +70,25 @@ I list a few here!
 - [https://cplusplus.com/](https://cplusplus.com/): Contains both a C++ language [tutorial](https://cplusplus.com/doc/tutorial/) and a C++ library [reference](https://cplusplus.com/reference/).
 - [Modern C++ Tutorial](https://github.com/changkun/modern-cpp-tutorial). This GitHub repo contains
 some information and exercises that are useful!
+
+## Appendix: Official C++ Documentation for Topics Covered in the Bootcamp
+- [References](https://en.cppreference.com/w/cpp/language/reference)
+- [std::move](https://en.cppreference.com/w/cpp/utility/move)
+- [Move Constructors](https://en.cppreference.com/w/cpp/language/move_constructor) and [Move Assignment Operators](https://en.cppreference.com/w/cpp/language/move_assignment)
+- [Templated Functions]
+- [Templated Classes]
+- [Wrapper Classes]
+- [Iterators]
+- [Namespaces]
+- [std::vector]
+- [std::set]
+- [std::unordered_map](https://en.cppreference.com/w/cpp/container/unordered_map)
+- [auto](https://en.cppreference.com/w/cpp/language/auto)
+- [std::unique_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr)
+- [std::shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr)
+- [std::mutex](https://en.cppreference.com/w/cpp/thread/mutex)
+- [std::scoped_lock](https://en.cppreference.com/w/cpp/thread/scoped_lock)
+- [std::condition_variable](https://en.cppreference.com/w/cpp/thread/condition_variable)
+- [std::shared_mutex](https://en.cppreference.com/w/cpp/thread/shared_mutex)
+- [std::shared_lock](https://en.cppreference.com/w/cpp/thread/shared_lock)
+- [std::unique_lock](https://en.cppreference.com/w/cpp/thread/unique_lock)

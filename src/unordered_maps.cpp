@@ -18,7 +18,7 @@
 #include <iostream>
 // Includes the unordered_map container library header.
 #include <unordered_map>
-// Includes the string library.
+// Includes the C++ string library.
 #include <string>
 // Includes std::make_pair.
 #include <utility>

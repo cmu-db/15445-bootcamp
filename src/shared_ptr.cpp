@@ -14,7 +14,7 @@
 #include <iostream>
 // Includes std::shared_ptr functionality.
 #include <memory>
-// Including the utility header for std::move.
+// Includes the utility header for std::move.
 #include <utility>
 
 // Basic point class. (Will use later)

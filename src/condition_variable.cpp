@@ -62,11 +62,11 @@ void waiter_thread() {
   std::cout << "Printing count: " << count << std::endl;
 }
 
-// The main method constructs three thread objects (C++ STL equivalent of
-// pthreads) and has them both run the add_count_and_notify function in
-// parallel. After these threads are finished executing, we print the count
-// value, from the waiter thread, showing that both increments, along with
-// the conditional acquisition in the waiter thread, worked successfully.
+// The main method constructs three thread objects and has two of them run the
+// add_count_and_notify function in parallel. After these threads are finished
+// executing, we print the count value, from the waiter thread, showing that
+// both increments, along with the conditional acquisition in the waiter
+// thread, worked successfully.
 int main() {
   std::thread t1(add_count_and_notify);
   std::thread t2(add_count_and_notify);
