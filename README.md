@@ -42,10 +42,16 @@ reading the files on concepts you are unfamiliar about.
 - `templated_functions.cpp`: Covers C++ templated functions.
 - `templated_classes.cpp` Covers C++ templated classes.
 
+### Misc
+- `wrapper_class.cpp`: Covers C++ wrapper classes.
+- `iterator.cpp`: Covers implementing a basic C++ style iterator.
+- `namespaces.cpp`: Covers C++ namespaces.
+
 ### C++ Standard Library (STL) Containers
 - `vectors.cpp`: Covers `std::vector`.
 - `set.cpp`: Covers `std::set`.
 - `unordered_map.cpp`: Covers `std::unordered_map`.
+- `auto.cpp`: Covers the usage of the C++ keyword `auto`, including using `auto` to iterate through C++ STL containers.
 
 ### C++ Standard Library (STL) Memory
 - `unique_ptr.cpp`: Covers `std::unique_ptr`.
@@ -55,12 +61,6 @@ reading the files on concepts you are unfamiliar about.
 - `mutex.cpp`: Covers `std::mutex`.
 - `scoped_lock.cpp`: Covers `std::scoped_lock`.
 - `condition_variable.cpp`: Covers `std::condition_variable`.
-
-### Misc
-- `wrapper_class.cpp`: Covers C++ wrapper classes.
-- `iterator.cpp`: Covers implementing a basic C++ style iterator.
-- `auto.cpp`: Covers the usage of the C++ keyword `auto`.
-- `namespaces.cpp`: Covers C++ namespaces.
 
 ## Other Resources
 There are many other resources that will be helpful while you get accquainted to C++.
