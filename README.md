@@ -72,16 +72,20 @@ I list a few here!
 some information and exercises that are useful!
 
 ## Appendix: Official C++ Documentation for Topics Covered in the Bootcamp
+This documentation may be useful to you! It's very comprehensive (much more comprehensive than this
+bootcamp) but it may lack some readability. Overall, I think it's still a good idea to try to read
+and understand this documentation, especially when working on the projects. Although the bootcamp
+tries to be as comprehensive as possible, it still only covers the bare bones of using modern C++.
+
 - [References](https://en.cppreference.com/w/cpp/language/reference)
 - [std::move](https://en.cppreference.com/w/cpp/utility/move)
 - [Move Constructors](https://en.cppreference.com/w/cpp/language/move_constructor) and [Move Assignment Operators](https://en.cppreference.com/w/cpp/language/move_assignment)
-- [Templated Functions]
-- [Templated Classes]
-- [Wrapper Classes]
-- [Iterators]
-- [Namespaces]
-- [std::vector]
-- [std::set]
+- [Templated Functions](https://en.cppreference.com/w/cpp/language/function_template)
+- [Templated Classes](https://en.cppreference.com/w/cpp/language/class_template)
+- [Iterators](https://en.cppreference.com/w/cpp/iterator)
+- [Namespaces](https://en.cppreference.com/w/cpp/language/namespace)
+- [std::vector](https://en.cppreference.com/w/cpp/container/vector)
+- [std::set](https://en.cppreference.com/w/cpp/container/set)
 - [std::unordered_map](https://en.cppreference.com/w/cpp/container/unordered_map)
 - [auto](https://en.cppreference.com/w/cpp/language/auto)
 - [std::unique_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr)
