@@ -30,7 +30,7 @@ void add_count() {
   count += 1;
 
   // Once the function add_count finishes, the object slk is out of scope, and
-  // in its destructor, the mutex m is relesaed.
+  // in its destructor, the mutex m is released.
 }
 
 // The main method is identical to the one in mutex.cpp. It constructs the

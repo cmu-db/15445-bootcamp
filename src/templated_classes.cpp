@@ -114,6 +114,12 @@ int main() {
   std::cout << "Calling print on FooSpecial<float> e(4.5): ";
   e.print();
 
+  // Lastly, let's see what happens when we construct an object from a
+  // templated class with non-type arguments.
+  Bar<150> f;
+  std::cout << "Calling print_int on Bar<150> f: ";
+  f.print_int();
+
   // Once again, these are contrived examples, but it is still important
   // to understand them you'll be seeing code similar to this in the Bustub
   // codebase, so it's good to understand templated classes in these contexts!

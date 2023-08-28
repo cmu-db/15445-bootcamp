@@ -54,10 +54,10 @@ int main() {
   // This is how to initialize a unique pointer with a custom constructor.
   std::unique_ptr<Point> u3 = std::make_unique<Point>(2, 3);
 
-  // Here, for std::unique_ptr instance u, I use the statement (u ? "not empty"
+  // Here, for std::unique_ptr instance u, we use the statement (u ? "not empty"
   // : "empty") to determine if the pointer u contains managed data. The main
   // gist of this is that the std::unique_ptr class has a conversion function on
-  // its objects to a boolean type, and so this function is called whenever I
+  // its objects to a boolean type, and so this function is called whenever we
   // treat the std::unique_ptr as a boolean. For instance, this can be used in
   // the following example.
   if (u1) {

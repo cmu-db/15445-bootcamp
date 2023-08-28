@@ -32,8 +32,12 @@ int main() {
   // through 10 in our set. There also exists an emplace function that allows
   // the user to construct objects in place for set insertion. We cover emplace
   // more in vectors.cpp (line 73).
-  for (int i = 1; i <= 10; ++i) {
+  for (int i = 1; i <= 5; ++i) {
     int_set.insert(i);
+  }
+
+  for (int i = 6; i <= 10; ++i) {
+    int_set.emplace(i);
   }
 
   // To find an element, we can use the find function, which returns an
