@@ -109,7 +109,8 @@ int main() {
 
   // To move the contents of the andy object to another object, we can use
   // std::move in a couple ways. This method calls the move assignment operator.
-  Person andy1 = std::move(andy);
+  Person andy1;
+  andy1 = std::move(andy);
 
   // Note that andy1 is valid, while andy is not a valid object.
   std::cout << "Printing andy1's validity: ";
