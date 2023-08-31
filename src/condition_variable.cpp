@@ -20,6 +20,8 @@
 // 2, the waiting thread wakes up, acquires the lock, and prints the count
 // value.
 
+// Includes the condition variable library header.
+#include <condition_variable>
 // Includes std::cout (printing) for demo purposes.
 #include <iostream>
 // Includes the mutex library header.
