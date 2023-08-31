@@ -62,7 +62,7 @@ public:
   // Move assignment operator for class Person.
   Person &operator=(Person &&other) {
     age_ = other.age_;
-    nicknames_ = std::move(nicknames_);
+    nicknames_ = std::move(other.nicknames_);
     valid_ = true;
 
     // The moved object's validity tag is set to false.
