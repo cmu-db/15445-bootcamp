@@ -22,7 +22,7 @@
 
 // This is the syntax to declare a namespace.
 namespace ABC {
-  // We define a function spam in the ABC namespace. This is used in line 44.
+  // We define a function spam in the ABC namespace. This is used in line 57.
   void spam(int a) {
     std::cout << "Hello from ABC::spam: " << a << std::endl;
   }
