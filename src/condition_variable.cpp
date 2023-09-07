@@ -53,7 +53,7 @@ void add_count_and_notify() {
 // count == 2. After that, it grabs the mutex m and executes code in
 // the critical section.
 // Condition variables need an std::unique_lock object to be constructed.
-// std::unique_lock is a type of C++ STL synchronization primtiive that
+// std::unique_lock is a type of C++ STL synchronization primitive that
 // gives more flexibility and features, including the usage with
 // condition variables. Particularly, it is moveable but not copy-constructible
 // or copy-assignable.
