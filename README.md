@@ -66,7 +66,7 @@ reading the files on concepts you are unfamiliar about.
 ## Other Resources
 There are many other resources that will be helpful while you get accquainted to C++.
 I list a few here!
-- [https://en.cppreference.com/w/](https://en.cppreference.com/w/): This is the official C++ documentation.
+- [https://en.cppreference.com/w/](https://en.cppreference.com/w/): Unofficial but quite accurate summary and examples of both C++ and C standards.
 - [https://cplusplus.com/](https://cplusplus.com/): Contains both a C++ language [tutorial](https://cplusplus.com/doc/tutorial/) and a C++ library [reference](https://cplusplus.com/reference/).
 - [Modern C++ Tutorial](https://github.com/changkun/modern-cpp-tutorial). This GitHub repo contains
 some information and exercises that are useful!
