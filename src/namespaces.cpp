@@ -138,7 +138,7 @@ int main() {
   A::foo(122);
   B::foo(150);
 
-  // However, since line 95 brought the B namespace into the current scope,
+  // However, since line 106 brought the B namespace into the current scope,
   // it is possible to access anything from the B namespace without the B
   // namespace identifier. Therefore, it is possible to call B::foo by 
   // identifying it as foo.
