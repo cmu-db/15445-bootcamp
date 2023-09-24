@@ -17,6 +17,8 @@
 #include <utility>
 // Includes the C++ string library.
 #include <string>
+// Includes the header for uint32_t.
+#include <cstdint>
 // Includes the header for std::vector. We'll cover vectors more in
 // containers.cpp, but what suffices to know for now is that vectors are
 // essentially dynamic arrays, and the type std::vector<std::string> is an array
