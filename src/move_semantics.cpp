@@ -34,7 +34,7 @@
 // to show the performance benefits of using std::move.
 #include <vector>
 
-// Function that takes in an rvalue reference as an argument.
+// Function that takes in a rvalue reference as an argument.
 // It seizes ownership of the vector passed in, appends 3 to
 // the back of it, and prints the values in the vector.
 void move_add_three_and_print(std::vector<int> &&vec) {
@@ -46,7 +46,7 @@ void move_add_three_and_print(std::vector<int> &&vec) {
   std::cout << "\n";
 }
 
-// Function that takes in an rvalue reference as an argument.
+// Function that takes in a rvalue reference as an argument.
 // It appends 3 to the back of the vector passed in as an argument,
 // and prints the values in the vector. Notably, it does not seize
 // ownership of the vector. Therefore, the argument passed in would
@@ -60,8 +60,8 @@ void add_three_and_print(std::vector<int> &&vec) {
 }
 
 int main() {
-  // Take this expression. Note that a is an lvalue, since it's a variable that
-  // refers to a specific space in memory (where a is stored). 10 is an rvalue.
+  // Take this expression. Note that 'a' is a lvalue, since it's a variable that
+  // refers to a specific space in memory (where 'a' is stored). 10 is a rvalue.
   int a = 10;
 
   // Let's see a basic example of moving data from one lvalue to another.
@@ -82,7 +82,7 @@ int main() {
   std::cout << "Printing from stealing_ints: " << stealing_ints[1] << std::endl;
 
   // It is possible to pass in a rvalue reference into a function. However,
-  // once the rvalue is moved from the lvalue in the caller context to an lvalue
+  // once the rvalue is moved from the lvalue in the caller context to a lvalue
   // in the callee context, it is effectively unusable to the caller.
   // Essentially, after move_add_three_and_print is called, we cannot use the
   // data in int_array2. It no longer belongs to the int_array2 lvalue.
