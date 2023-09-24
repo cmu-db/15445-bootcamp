@@ -11,12 +11,12 @@
 
 // To understand move semantics, one must understand the concept of lvalues
 // and rvalues. A simplified definition of lvalues is that lvalues are objects
-// that refer to an location in memory. Rvalues are anything that is not a
+// that refer to a location in memory. Rvalues are anything that is not a
 // lvalue.
 
 // std::move is the most common way of moving an object from one lvalue to
-// another. std::move casts an expression to an rvalue. This allows for us to
-// interact with an lvalue as an rvalue, and allows for the ownership to be
+// another. std::move casts an expression to a rvalue. This allows for us to
+// interact with a lvalue as a rvalue, and allows for the ownership to be
 // transferred from one lvalue to another.
 
 // In the code below, we include some examples for identifying whether
@@ -72,8 +72,8 @@ int main() {
   std::vector<int> stealing_ints = std::move(int_array);
 
   // Rvalue references are references that refer to the data itself, as opposed
-  // to an lvalue. Calling std::move on a lvalue (such as stealing_ints) will
-  // result in the expression being casted to an rvalue reference.
+  // to a lvalue. Calling std::move on a lvalue (such as stealing_ints) will
+  // result in the expression being cast to a rvalue reference.
   std::vector<int> &&rvalue_stealing_ints = std::move(stealing_ints);
 
   // However, note that after this, it is still possible to access the data in
@@ -81,7 +81,7 @@ int main() {
   // rvalue_stealing_ints.
   std::cout << "Printing from stealing_ints: " << stealing_ints[1] << std::endl;
 
-  // It is possible to pass in an rvalue reference into a function. However,
+  // It is possible to pass in a rvalue reference into a function. However,
   // once the rvalue is moved from the lvalue in the caller context to an lvalue
   // in the callee context, it is effectively unusable to the caller.
   // Essentially, after move_add_three_and_print is called, we cannot use the
