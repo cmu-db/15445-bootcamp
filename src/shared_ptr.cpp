@@ -124,7 +124,7 @@ int main() {
   modify_ptr_via_ref(s2);
   modify_ptr_via_rvalue_ref(std::move(s2));
 
-  // After running this code, s2 should have x = 15 and y = 445.
+  // After running this code, s2 should have x = 15 and y = 645.
   std::cout << "Pointer s2 has x=" << s2->GetX() << " and y=" << s2->GetY()
             << std::endl;
 
