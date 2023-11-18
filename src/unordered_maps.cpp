@@ -114,7 +114,7 @@ int main() {
   // Just like std::vector, we can also iterate through the unordered map
   // via a for-each loop.
   std::cout << "Printing the elements of the iterator with a for-each loop:\n";
-  for (const std::pair<std::string, int> &elem : map) {
+  for (const std::pair<const std::string, int> &elem : map) {
     std::cout << "(" << elem.first << ", " << elem.second << "), ";
   }
   std::cout << "\n";
