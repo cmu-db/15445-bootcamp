@@ -60,7 +60,7 @@ class DLLIterator {
       : curr_(head) {}
 
     // Implementing a prefix increment operator (++iter).
-    DLLIterator operator++() {
+    DLLIterator& operator++() {
       curr_ = curr_->next_;
       return *this;
     }
