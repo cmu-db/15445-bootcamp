@@ -120,7 +120,7 @@ int main() {
   // iterator.cpp.
   int_vector.erase(int_vector.begin() + 2);
   std::cout << "Printing the elements of int_vector after erasing "
-               "int_vector[2] (which is 2)";
+               "int_vector[2] (which is 2)\n";
   print_int_vector(int_vector);
 
   // We can also erase elements in a range via the erase function. If we want to
