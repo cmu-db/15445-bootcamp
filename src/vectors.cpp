@@ -114,7 +114,7 @@ int main() {
   // in the vector. The vector iterator also has a plus operator that takes
   // a vector iterator and an integer. The plus operator will increase the 
   // index of the element that the iterator is pointing to by the number passed
-  // in. Therefore, int_vector.begin() + 2 is pointing to the second element in
+  // in. Therefore, int_vector.begin() + 2 is pointing to the third element in
   // the vector, or the element at int_vector[2].
   // If you are confused about iterators, it may be helpful to read the header of
   // iterator.cpp.
