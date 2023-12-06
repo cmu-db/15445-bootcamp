@@ -76,7 +76,8 @@ int main() {
       << "Number of shared pointer object instances using the data in s3: "
       << s3.use_count() << std::endl;
 
-  // Then, s4 is copy-assigned from s3.
+  // Then, s4 is copy-constructed from s3.
+  // This is copy-construction because it is the first time s4 appears.
   std::shared_ptr<Point> s4 = s3;
 
   // Now, the number of references to pointer s3's data should be 2, since both
