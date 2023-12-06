@@ -133,10 +133,13 @@ int main() {
   andy1.PrintValid();
 
   // However, note that because the copy assignment operator and copy
-  // constructor are deleted, this code will not compile. The first line uses
-  // the copy constructor and the second line also uses the copy constructor.
-  // Try uncommenting one line at a time to see the resulting compiler errors.
-  // Person andy3 = andy2;
+  // constructor are deleted, this code will not compile. The first two lines 
+  // use the default constructor and then copy assignment operator and the last line 
+  // uses the copy constructor. Try uncommenting one part at a time to see the 
+  // resulting compiler errors.
+  // Person andy3;
+  // andy3 = andy2;
+  
   // Person andy4(andy2);
 
   return 0;
