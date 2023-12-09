@@ -48,21 +48,23 @@ public:
   // and moves the contents of the rvalue passed in as an argument to this
   // Person object instance. Note the usage of std::move. In order to ensure
   // that nicknames in object person is moved, and not deep copied, we use
-  // std::move, which casts the lvalue person.nicknames_ to an rvalue, which
-  // represents the value itself. Also note that I don't call std::move on the
-  // age_ field. Since it's an integer type, it's too small to incur a
+  // std::move. std::move will cast the lvalue person.nicknames_ to an rvalue,
+  // which represents the value itself. Also note that I don't call std::move
+  // on the age_ field. Since it's an integer type, it's too small to incur a
   // significant copying cost. Generally, for numeric types, it's okay to copy
   // them, but for other types, such as strings and object types, one should
   // move the class instance unless copying is necessary.
   Person(Person &&person)
       : age_(person.age_), nicknames_(std::move(person.nicknames_)),
         valid_(true) {
+    std::cout << "Calling the move constructor for class Person.\n";
     // The moved object's validity tag is set to false.
     person.valid_ = false;
   }
 
   // Move assignment operator for class Person.
   Person &operator=(Person &&other) {
+    std::cout << "Calling the move assignment operator for class Person.\n";
     age_ = other.age_;
     nicknames_ = std::move(other.nicknames_);
     valid_ = true;
@@ -132,14 +134,16 @@ int main() {
   std::cout << "Printing andy1's validity: ";
   andy1.PrintValid();
 
-  // However, note that because the copy assignment operator and copy
-  // constructor are deleted, this code will not compile. The first two lines 
-  // use the default constructor and then copy assignment operator and the last line 
-  // uses the copy constructor. Try uncommenting one part at a time to see the 
-  // resulting compiler errors.
+  // However, note that because the copy assignment operator is deleted, this code 
+  // will not compile. The first line of this code constructs a new object via the
+  // default constructor, and the second line invokes the copy assignment operator
+  // to re-initialize andy3 with the deep-copied contents of andy2. Try uncommenting
+  // these lines of code to see the resulting compiler errors.
   // Person andy3;
   // andy3 = andy2;
 
+  // Because the copy constructor is deleted, this code will not compile. Try
+  // uncommenting this code to see the resulting compiler errors.
   // Person andy4(andy2);
 
   return 0;
