@@ -5,7 +5,7 @@
  */
 
 // In this file, we'll talk about std::shared_ptr, which is a C++ smart pointer.
-// See the intro of unique_ptr.cpp for a introduction on smart pointers.
+// See the intro of unique_ptr.cpp for an introduction on smart pointers.
 // std::shared_ptr is a type of smart pointer that retains shared ownership of
 // an object through a pointer. This means that multiple shared pointers can
 // own the same object, and shared pointers can be copied.
@@ -33,11 +33,11 @@ private:
 };
 
 // Function that modifies a Point object inside a shared pointer
-// by passing the shared pointer argument as an reference.
+// by passing the shared pointer argument as a reference.
 void modify_ptr_via_ref(std::shared_ptr<Point> &point) { point->SetX(15); }
 
 // Function that modifies a Point object inside a shared pointer
-// by passing the shared pointer argument as an rvalue reference.
+// by passing the shared pointer argument as a rvalue reference.
 void modify_ptr_via_rvalue_ref(std::shared_ptr<Point> &&point) {
   point->SetY(645);
 }
@@ -120,12 +120,12 @@ int main() {
   // passing unique pointers by reference. See references.cpp for more
   // information on references. See move_semantics.cpp for more information on
   // rvalue references. Here, we present code below that calls functions that
-  // modify s2 by passing a shared pointer as a reference and as an rvalue
+  // modify s2 by passing a shared pointer as a reference and as a rvalue
   // reference.
   modify_ptr_via_ref(s2);
   modify_ptr_via_rvalue_ref(std::move(s2));
 
-  // After running this code, s2 should have x = 15 and y = 445.
+  // After running this code, s2 should have x = 15 and y = 645.
   std::cout << "Pointer s2 has x=" << s2->GetX() << " and y=" << s2->GetY()
             << std::endl;
 
