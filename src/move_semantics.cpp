@@ -5,7 +5,7 @@
  */
 
 // Move semantics in C++ are a useful concept that allows for the efficient
-// and optimized transfer of ownership of data, between objects. One of the
+// and optimized transfer of ownership of data between objects. One of the
 // main goals of move semantics is to increase performance, since moving an
 // object is faster and more efficient than deep copying the object.
 
