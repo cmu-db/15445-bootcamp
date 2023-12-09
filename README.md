@@ -7,8 +7,7 @@ However, we do cover some C++ topics that are necessary to know while doing
 the programming assignments. This tutorial does not cover basic C/C++ syntax.
 It mainly covers C++ programming features, particularly concepts that do not exist in C.
 
-This is the first iteration of the C++ bootcamp for 15-445/645, and feedback
-is appreciated!
+Feedback for the C++ bootcamp is always appreciated! Feel free to submit issues/PRs.
 
 ## Format
 The bootcamp consists of C++ code files, located in `src/`, that are meant
@@ -71,7 +70,7 @@ I list a few here!
 - [Modern C++ Tutorial](https://github.com/changkun/modern-cpp-tutorial). This GitHub repo contains
 some information and exercises that are useful!
 
-## Appendix: Official C++ Documentation for Topics Covered in the Bootcamp
+## Appendix: C++ Documentation for Topics Covered in the Bootcamp
 This documentation may be useful to you! It's very comprehensive (much more comprehensive than this
 bootcamp) but it may lack some readability. Overall, I think it's still a good idea to try to read
 and understand this documentation, especially when working on the projects. Although the bootcamp
