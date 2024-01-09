@@ -74,7 +74,7 @@ class IntPtrManager {
       other.ptr_ = nullptr;
     }
 
-    // Move assignment operator for class Person. Similar techniques as
+    // Move assignment operator for this wrapper class. Similar techniques as
     // the move constructor.
     IntPtrManager &operator=(IntPtrManager &&other) {
       ptr_ = other.ptr_;
