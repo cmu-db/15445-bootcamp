@@ -62,6 +62,9 @@ reading the files on concepts you are unfamiliar about.
 - `condition_variable.cpp`: Covers `std::condition_variable`.
 - `rwlock.cpp`: Covers the usage of several C++ STL synchronization primitive libraries (`std::shared_mutex`, `std::shared_lock`, `std::unique_lock`) to create a reader-writer's lock implementation. 
 
+### Demo Code for 15-445/645 Bootcamp
+- `spring2024/s24_my_ptr.cpp`: Covers the code used in Spring 2024 bootcamp.
+
 ## Other Resources
 There are many other resources that will be helpful while you get accquainted to C++.
 I list a few here!

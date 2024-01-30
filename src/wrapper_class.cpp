@@ -77,6 +77,12 @@ class IntPtrManager {
     // Move assignment operator for this wrapper class. Similar techniques as
     // the move constructor.
     IntPtrManager &operator=(IntPtrManager &&other) {
+      if (ptr_ == other.ptr_) {
+        return *this;
+      }
+      if (ptr_) {
+        delete ptr_;
+      }
       ptr_ = other.ptr_;
       other.ptr_ = nullptr;
       return *this;

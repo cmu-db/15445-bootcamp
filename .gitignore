@@ -39,3 +39,6 @@ todo.txt
 
 # VSCode
 .vscode/
+
+# Cache
+.cache/

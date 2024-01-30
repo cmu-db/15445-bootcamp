@@ -43,3 +43,6 @@ add_executable(wrapper_class src/wrapper_class.cpp)
 add_executable(iterator src/iterator.cpp)
 add_executable(auto src/auto.cpp)
 add_executable(namespaces src/namespaces.cpp)
+
+# Compiling bootcamp demo code
+add_executable(s24_my_ptr src/spring2024/s24_my_ptr.cpp)
