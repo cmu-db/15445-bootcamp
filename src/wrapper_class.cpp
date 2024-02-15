@@ -56,12 +56,9 @@ class IntPtrManager {
     // resource that it is managing; in this case, the destructor deletes
     // the pointer!
     ~IntPtrManager() {
-      // Note that since the move constructor marks objects invalid by setting
-      // their ptr_ value to nullptr, we have to account for this in the 
-      // destructor. We don't want to be calling delete on a nullptr!
-      if (ptr_) {
-        delete ptr_;
-      }
+      // Note that this is safe even when the pointer is null!
+      // The language guarantees that delete does nothing when passed a null pointer.
+      delete ptr_;
     }
 
     // Move constructor for this wrapper class. Note that after the move
@@ -80,9 +77,7 @@ class IntPtrManager {
       if (ptr_ == other.ptr_) {
         return *this;
       }
-      if (ptr_) {
-        delete ptr_;
-      }
+      delete ptr_;
       ptr_ = other.ptr_;
       other.ptr_ = nullptr;
       return *this;
