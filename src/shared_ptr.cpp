@@ -116,7 +116,7 @@ int main() {
             << s3.use_count() << std::endl;
 
   // Similar to unique pointers, shared pointers can also be passed by reference
-  // and rvalue reference. See unique_ptr.cpp (line 89) for a information on
+  // and rvalue reference. See unique_ptr.cpp (line 97) for a information on
   // passing unique pointers by reference. See references.cpp for more
   // information on references. See move_semantics.cpp for more information on
   // rvalue references. Here, we present code below that calls functions that
