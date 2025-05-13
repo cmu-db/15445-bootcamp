@@ -48,8 +48,8 @@ reading the files on concepts you are unfamiliar about.
 
 ### C++ Standard Library (STL) Containers
 - `vectors.cpp`: Covers `std::vector`.
-- `set.cpp`: Covers `std::set`.
-- `unordered_map.cpp`: Covers `std::unordered_map`.
+- `sets.cpp`: Covers `std::set`.
+- `unordered_maps.cpp`: Covers `std::unordered_map`.
 - `auto.cpp`: Covers the usage of the C++ keyword `auto`, including using `auto` to iterate through C++ STL containers.
 
 ### C++ Standard Library (STL) Memory
