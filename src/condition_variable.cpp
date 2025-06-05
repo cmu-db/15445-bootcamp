@@ -29,20 +29,22 @@
 // Includes the thread library header.
 #include <thread>
 
+using namespace std;
+
 // Defining a global count variable, a mutex, and a condition variable to
 // be used by both threads.
 int count = 0;
-std::mutex m;
+mutex m;
 
 // This is the syntax for declaring and default initializing a condition 
 // variable.
-std::condition_variable cv;
+condition_variable cv;
 
 // In this function, a thread increments the count variable by
 // 1. It also will notify one waiting thread if the count value is 2.
 // It is ran by two of the threads in the main function. 
 void add_count_and_notify() {
-  std::scoped_lock slk(m);
+  scoped_lock slk(m);
   count += 1;
   if (count == 2) {
     cv.notify_one();
@@ -58,10 +60,10 @@ void add_count_and_notify() {
 // condition variables. Particularly, it is moveable but not copy-constructible
 // or copy-assignable.
 void waiter_thread() {
-  std::unique_lock lk(m);
+  unique_lock lk(m);
   cv.wait(lk, []{return count == 2;});
 
-  std::cout << "Printing count: " << count << std::endl;
+  cout << "Printing count: " << count << endl;
 }
 
 // The main method constructs three thread objects and has two of them run the
@@ -70,9 +72,9 @@ void waiter_thread() {
 // both increments, along with the conditional acquisition in the waiter
 // thread, worked successfully.
 int main() {
-  std::thread t1(add_count_and_notify);
-  std::thread t2(add_count_and_notify);
-  std::thread t3(waiter_thread);
+  thread t1(add_count_and_notify);
+  thread t2(add_count_and_notify);
+  thread t3(waiter_thread);
   t1.join();
   t2.join();
   t3.join();
