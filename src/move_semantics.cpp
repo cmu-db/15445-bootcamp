@@ -62,6 +62,9 @@ void add_three_and_print(std::vector<int> &&vec) {
 int main() {
   // Take this expression. Note that 'a' is a lvalue, since it's a variable that
   // refers to a specific space in memory (where 'a' is stored). 10 is a rvalue.
+  // An easy trick to identify lvalues and rvalues will be whether you can
+  // access its address in memory i.e you can do int *ptr = &a but you can't do
+  // this for the literal 10.
   int a = 10;
 
   // Let's see a basic example of moving data from one lvalue to another.
