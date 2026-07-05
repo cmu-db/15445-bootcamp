@@ -26,7 +26,7 @@ executable, located in `./build`. The same holds for every file in the source
 directory.
 
 ## Files
-There are fifteen files in the `src/` directory, each which cover different
+There are nineteen files in the `src/` directory, each which cover different
 concepts. They are meant to be read in the order below, since each file 
 builds up on the previous one. However, if you know some modern C++ concepts
 and are looking to refresh your knowledge, it is probably okay to start by
